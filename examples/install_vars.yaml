@@ -34,7 +34,9 @@ chronyconfig:
    content:
      - server: ntp1.example.com
        options: iburst
+       maxpoll: 10
      - server: ntp2.example.com
        options: iburst
+       maxpoll: 10
 
 # bastion_vip: "B.B.B.B"

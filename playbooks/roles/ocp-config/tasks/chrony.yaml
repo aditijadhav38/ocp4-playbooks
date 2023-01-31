@@ -15,7 +15,7 @@
     path: /etc/chrony.conf
     regexp: '^server {{ item.server }} '
     state: present
-    line: "server {{ item.server }} {{ item.options | default('iburst') }}"
+    line: "server {{ item.server }} {{ item.options | default('iburst') }} maxpoll {{ item.maxpoll | default('10') }}"
     insertafter: 'server '
     backup: yes
   loop: "{{ chronyconfig.content }}"
